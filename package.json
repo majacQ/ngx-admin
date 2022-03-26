@@ -27,7 +27,9 @@
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points --tsconfig \"./src/tsconfig.app.json\""
+    "postinstall": "ngcc --properties es2015 es5 browser module main --first-only --create-ivy-entry-points --tsconfig \"./src/tsconfig.app.json\"",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "dependencies": {
     "@akveo/ng2-completer": "^9.0.1",
@@ -74,7 +76,8 @@
     "tslib": "^2.0.0",
     "typeface-exo": "0.0.22",
     "web-animations-js": "^2.3.2",
-    "zone.js": "~0.10.3"
+    "zone.js": "~0.10.3",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.7",
@@ -108,5 +111,6 @@
     "tslint": "~6.1.0",
     "tslint-language-service": "^0.9.9",
     "typescript": "4.0.5"
-  }
+  },
+  "snyk": true
 }
